@@ -1,14 +1,12 @@
 # HEALPix Cookbook
 
-<p align="center">
-  <img style="float: right;" src="https://raw.githubusercontent.com/UXARRAY/uxarray/a6aa6294975f189e8c36dd3d14da745526e53e06/docs/_static/images/logos/uxarray_logo_v_dark.svg" width="110" />
-  <img style="float: right;" src="https://easy.gems.dkrz.de/_static/gems.png" width="230" />
-  <img style="float: right;" src="https://healpix.sourceforge.io/images/gorski_f1.jpg" width="100" />
-</p>
+<img src="https://healpix.sourceforge.io/images/gorski_f1.jpg" alt="HEALPix logo" width="700"/>
+<img src="https://easy.gems.dkrz.de/_static/gems.png" alt="EasyGems logo" width="700"/>
+<img src="https://github.com/UXARRAY/uxarray/blob/main/docs/_static/images/logos/uxarray_logo_h_dark.png?raw=true" alt="UXarray logo" width="700"/>
 
 [![nightly-build](https://github.com/ProjectPythia/healpix-cookbook/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/healpix-cookbook/actions/workflows/nightly-build.yaml)
 [![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/healpix-cookbook/main?labpath=notebooks)
-[![DOI](https://zenodo.org/badge/942299848.svg)](https://zenodo.org/badge/latestdoi/942299848)
+[![DOI](https://zenodo.org/badge/942299848.svg)](https://doi.org/10.5281/zenodo.15346817)
 
 This Project Pythia Cookbook covers an introduction to the [**H**ierarchical **E**qual **A**rea iso**L**atitude **Pix**elation (HEALPix)](https://healpix.sourceforge.io/) of the Earth and utilization of 
 [easy.gems](https://easy.gems.dkrz.de/index.html#) and [UXarray](https://uxarray.readthedocs.io/) to run data analysis and visualization functionality on HEALPix data sets.
