@@ -1,8 +1,8 @@
 # HEALPix Cookbook
 
-<img src="https://healpix.sourceforge.io/images/gorski_f1.jpg" style="display: block; margin: 0 auto;" alt="HEALPix logo" width="250"/>
-<img src="https://easy.gems.dkrz.de/_static/gems.png" alt="EasyGems logo" width="500"/>
-<img src="https://github.com/UXARRAY/uxarray/blob/main/docs/_static/images/logos/uxarray_logo_h_dark.png?raw=true" alt="UXarray logo" width="500"/>
+<img src="https://healpix.sourceforge.io/images/gorski_f1.jpg" style="display: block; margin-left: auto; margin-right: auto;" alt="HEALPix logo" width="250"/>
+<img src="https://easy.gems.dkrz.de/_static/gems.png" style="display: block; margin-left: auto; margin-right: auto;" alt="EasyGems logo" width="500"/>
+<img src="https://github.com/UXARRAY/uxarray/blob/main/docs/_static/images/logos/uxarray_logo_h_dark.png?raw=true" style="display: block; margin-left: auto; margin-right: auto;" alt="UXarray logo" width="500"/>
 
 [![nightly-build](https://github.com/ProjectPythia/healpix-cookbook/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/healpix-cookbook/actions/workflows/nightly-build.yaml)
 [![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/healpix-cookbook/main?labpath=notebooks)
