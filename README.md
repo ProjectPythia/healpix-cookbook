@@ -1,6 +1,6 @@
 # HEALPix Cookbook
 
-<center><img src="https://healpix.sourceforge.io/images/gorski_f1.jpg" style="display: block; margin-left: auto; margin-right: auto;" alt="HEALPix logo" width="250"/></center>
+<center><img src="https://healpix.sourceforge.io/images/gorski_f1.jpg" style="display: block; margin-left: auto; margin-right: auto;" alt="HEALPix logo" width="250"></center>
 <img src="https://easy.gems.dkrz.de/_static/gems.png" style="display: block; margin-left: auto; margin-right: auto;" alt="EasyGems logo" width="500"/>
 <img src="https://github.com/UXARRAY/uxarray/blob/main/docs/_static/images/logos/uxarray_logo_h_dark.png?raw=true" style="display: block; margin-left: auto; margin-right: auto;" alt="UXarray logo" width="500"/>
 
