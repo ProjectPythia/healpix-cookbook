@@ -1,0 +1,1808 @@
+<div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in notebooks */
+
+:root {
+  --xr-font-color0: var(
+    --jp-content-font-color0,
+    var(--pst-color-text-base rgba(0, 0, 0, 1))
+  );
+  --xr-font-color2: var(
+    --jp-content-font-color2,
+    var(--pst-color-text-base, rgba(0, 0, 0, 0.54))
+  );
+  --xr-font-color3: var(
+    --jp-content-font-color3,
+    var(--pst-color-text-base, rgba(0, 0, 0, 0.38))
+  );
+  --xr-border-color: var(
+    --jp-border-color2,
+    hsl(from var(--pst-color-on-background, white) h s calc(l - 10))
+  );
+  --xr-disabled-color: var(
+    --jp-layout-color3,
+    hsl(from var(--pst-color-on-background, white) h s calc(l - 40))
+  );
+  --xr-background-color: var(
+    --jp-layout-color0,
+    var(--pst-color-on-background, white)
+  );
+  --xr-background-color-row-even: var(
+    --jp-layout-color1,
+    hsl(from var(--pst-color-on-background, white) h s calc(l - 5))
+  );
+  --xr-background-color-row-odd: var(
+    --jp-layout-color2,
+    hsl(from var(--pst-color-on-background, white) h s calc(l - 15))
+  );
+}
+
+html[theme="dark"],
+html[data-theme="dark"],
+body[data-theme="dark"],
+body.vscode-dark {
+  --xr-font-color0: var(
+    --jp-content-font-color0,
+    var(--pst-color-text-base, rgba(255, 255, 255, 1))
+  );
+  --xr-font-color2: var(
+    --jp-content-font-color2,
+    var(--pst-color-text-base, rgba(255, 255, 255, 0.54))
+  );
+  --xr-font-color3: var(
+    --jp-content-font-color3,
+    var(--pst-color-text-base, rgba(255, 255, 255, 0.38))
+  );
+  --xr-border-color: var(
+    --jp-border-color2,
+    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 10))
+  );
+  --xr-disabled-color: var(
+    --jp-layout-color3,
+    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 40))
+  );
+  --xr-background-color: var(
+    --jp-layout-color0,
+    var(--pst-color-on-background, #111111)
+  );
+  --xr-background-color-row-even: var(
+    --jp-layout-color1,
+    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 5))
+  );
+  --xr-background-color-row-odd: var(
+    --jp-layout-color2,
+    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 15))
+  );
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+  line-height: 1.6;
+  padding-bottom: 4px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.xr-header {
+  border-bottom: solid 1px var(--xr-border-color);
+  margin-bottom: 4px;
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-obj-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type,
+.xr-group-box-contents > label {
+  color: var(--xr-font-color2);
+  display: block;
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 0 20px 0 20px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item > input,
+.xr-group-box-contents > input,
+.xr-array-wrap > input {
+  display: block;
+  opacity: 0;
+  height: 0;
+  margin: 0;
+}
+
+.xr-section-item > input + label,
+.xr-var-item > input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item > input:enabled + label,
+.xr-var-item > input:enabled + label,
+.xr-array-wrap > input:enabled + label,
+.xr-group-box-contents > input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item > input:focus-visible + label,
+.xr-var-item > input:focus-visible + label,
+.xr-array-wrap > input:focus-visible + label,
+.xr-group-box-contents > input:focus-visible + label {
+  outline: auto;
+}
+
+.xr-section-item > input:enabled + label:hover,
+.xr-var-item > input:enabled + label:hover,
+.xr-array-wrap > input:enabled + label:hover,
+.xr-group-box-contents > input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.xr-section-summary > em {
+  font-weight: normal;
+}
+
+.xr-span-grid {
+  grid-column-end: -1;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.3em;
+}
+
+.xr-group-box-contents > input:checked + label > span {
+  display: inline-block;
+  padding-left: 0.6em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: "►";
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: "▼";
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details,
+.xr-group-box-contents > label {
+  padding-top: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  grid-column: 1 / -1;
+  margin-top: 4px;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in ~ .xr-section-details {
+  display: none;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-children {
+  display: inline-grid;
+  grid-template-columns: 100%;
+  grid-column: 1 / -1;
+  padding-top: 4px;
+}
+
+.xr-group-box {
+  display: inline-grid;
+  grid-template-columns: 0px 30px auto;
+}
+
+.xr-group-box-vline {
+  grid-column-start: 1;
+  border-right: 0.2em solid;
+  border-color: var(--xr-border-color);
+  width: 0px;
+}
+
+.xr-group-box-hline {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  height: 1em;
+  width: 26px;
+  border-bottom: 0.2em solid;
+  border-color: var(--xr-border-color);
+}
+
+.xr-group-box-contents {
+  grid-column-start: 3;
+  padding-bottom: 4px;
+}
+
+.xr-group-box-contents > label::before {
+  content: "📂";
+  padding-right: 0.3em;
+}
+
+.xr-group-box-contents > input:checked + label::before {
+  content: "📁";
+}
+
+.xr-group-box-contents > input:checked + label {
+  padding-bottom: 0px;
+}
+
+.xr-group-box-contents > input:checked ~ .xr-sections {
+  display: none;
+}
+
+.xr-group-box-contents > input + label > span {
+  display: none;
+}
+
+.xr-group-box-ellipsis {
+  font-size: 1.4em;
+  font-weight: 900;
+  color: var(--xr-font-color2);
+  letter-spacing: 0.15em;
+  cursor: default;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: "(";
+}
+
+.xr-dim-list:after {
+  content: ")";
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ",";
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  border-color: var(--xr-background-color-row-odd);
+  margin-bottom: 0;
+  padding-top: 2px;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+  border-color: var(--xr-background-color-row-even);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  display: none;
+  border-top: 2px dotted var(--xr-background-color);
+  padding-bottom: 20px !important;
+  padding-top: 10px !important;
+}
+
+.xr-var-attrs-in + label,
+.xr-var-data-in + label,
+.xr-index-data-in + label {
+  padding: 0 1px;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-data > pre,
+.xr-index-data > pre,
+.xr-var-data > table > tbody > tr {
+  background-color: transparent !important;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-index-name div,
+.xr-index-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2,
+.xr-no-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.xr-var-attrs-in:checked + label > .xr-icon-file-text2,
+.xr-var-data-in:checked + label > .xr-icon-database,
+.xr-index-data-in:checked + label > .xr-icon-database {
+  color: var(--xr-font-color0);
+  filter: drop-shadow(1px 1px 5px var(--xr-font-color2));
+  stroke-width: 0.8px;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.UxDataset&gt; Size: 883MB
+Dimensions:                              (depth_half: 73, time: 10958,
+                                          n_face: 12, level_full: 90,
+                                          soil_depth_water_level: 5,
+                                          depth_full: 72, level_half: 91,
+                                          soil_depth_energy_level: 5, crs: 1)
+Coordinates:
+  * depth_half                           (depth_half) float32 292B 0.0 ... 5....
+  * time                                 (time) datetime64[ns] 88kB 2020-01-0...
+  * level_full                           (level_full) int32 360B 1 2 3 ... 89 90
+  * soil_depth_water_level               (soil_depth_water_level) float32 20B ...
+  * depth_full                           (depth_full) float32 288B 1.0 ... 5....
+  * level_half                           (level_half) int32 364B 1 2 3 ... 90 91
+  * soil_depth_energy_level              (soil_depth_energy_level) float32 20B ...
+  * crs                                  (crs) float32 4B nan
+Dimensions without coordinates: n_face
+Data variables: (12/103)
+    A_tracer_v_to                        (time, depth_half, n_face) float32 38MB ...
+    FrshFlux_IceSalt                     (time, n_face) float32 526kB ...
+    FrshFlux_TotalIce                    (time, n_face) float32 526kB ...
+    Qbot                                 (time, n_face) float32 526kB ...
+    Qtop                                 (time, n_face) float32 526kB ...
+    Wind_Speed_10m                       (time, n_face) float32 526kB ...
+    ...                                   ...
+    vas                                  (time, n_face) float32 526kB ...
+    w                                    (time, depth_half, n_face) float32 38MB ...
+    wa_phy                               (time, level_half, n_face) float32 48MB ...
+    zg                                   (level_full, n_face) float32 4kB ...
+    zghalf                               (level_half, n_face) float32 4kB ...
+    zos                                  (time, n_face) float32 526kB ...</pre><div class='xr-wrap' style='display:none'><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in notebooks */
+
+:root {
+  --xr-font-color0: var(
+    --jp-content-font-color0,
+    var(--pst-color-text-base rgba(0, 0, 0, 1))
+  );
+  --xr-font-color2: var(
+    --jp-content-font-color2,
+    var(--pst-color-text-base, rgba(0, 0, 0, 0.54))
+  );
+  --xr-font-color3: var(
+    --jp-content-font-color3,
+    var(--pst-color-text-base, rgba(0, 0, 0, 0.38))
+  );
+  --xr-border-color: var(
+    --jp-border-color2,
+    hsl(from var(--pst-color-on-background, white) h s calc(l - 10))
+  );
+  --xr-disabled-color: var(
+    --jp-layout-color3,
+    hsl(from var(--pst-color-on-background, white) h s calc(l - 40))
+  );
+  --xr-background-color: var(
+    --jp-layout-color0,
+    var(--pst-color-on-background, white)
+  );
+  --xr-background-color-row-even: var(
+    --jp-layout-color1,
+    hsl(from var(--pst-color-on-background, white) h s calc(l - 5))
+  );
+  --xr-background-color-row-odd: var(
+    --jp-layout-color2,
+    hsl(from var(--pst-color-on-background, white) h s calc(l - 15))
+  );
+}
+
+html[theme="dark"],
+html[data-theme="dark"],
+body[data-theme="dark"],
+body.vscode-dark {
+  --xr-font-color0: var(
+    --jp-content-font-color0,
+    var(--pst-color-text-base, rgba(255, 255, 255, 1))
+  );
+  --xr-font-color2: var(
+    --jp-content-font-color2,
+    var(--pst-color-text-base, rgba(255, 255, 255, 0.54))
+  );
+  --xr-font-color3: var(
+    --jp-content-font-color3,
+    var(--pst-color-text-base, rgba(255, 255, 255, 0.38))
+  );
+  --xr-border-color: var(
+    --jp-border-color2,
+    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 10))
+  );
+  --xr-disabled-color: var(
+    --jp-layout-color3,
+    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 40))
+  );
+  --xr-background-color: var(
+    --jp-layout-color0,
+    var(--pst-color-on-background, #111111)
+  );
+  --xr-background-color-row-even: var(
+    --jp-layout-color1,
+    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 5))
+  );
+  --xr-background-color-row-odd: var(
+    --jp-layout-color2,
+    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 15))
+  );
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+  line-height: 1.6;
+  padding-bottom: 4px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.xr-header {
+  border-bottom: solid 1px var(--xr-border-color);
+  margin-bottom: 4px;
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-obj-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type,
+.xr-group-box-contents > label {
+  color: var(--xr-font-color2);
+  display: block;
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 0 20px 0 20px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item > input,
+.xr-group-box-contents > input,
+.xr-array-wrap > input {
+  display: block;
+  opacity: 0;
+  height: 0;
+  margin: 0;
+}
+
+.xr-section-item > input + label,
+.xr-var-item > input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item > input:enabled + label,
+.xr-var-item > input:enabled + label,
+.xr-array-wrap > input:enabled + label,
+.xr-group-box-contents > input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item > input:focus-visible + label,
+.xr-var-item > input:focus-visible + label,
+.xr-array-wrap > input:focus-visible + label,
+.xr-group-box-contents > input:focus-visible + label {
+  outline: auto;
+}
+
+.xr-section-item > input:enabled + label:hover,
+.xr-var-item > input:enabled + label:hover,
+.xr-array-wrap > input:enabled + label:hover,
+.xr-group-box-contents > input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.xr-section-summary > em {
+  font-weight: normal;
+}
+
+.xr-span-grid {
+  grid-column-end: -1;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.3em;
+}
+
+.xr-group-box-contents > input:checked + label > span {
+  display: inline-block;
+  padding-left: 0.6em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: "►";
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: "▼";
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details,
+.xr-group-box-contents > label {
+  padding-top: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  grid-column: 1 / -1;
+  margin-top: 4px;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in ~ .xr-section-details {
+  display: none;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-children {
+  display: inline-grid;
+  grid-template-columns: 100%;
+  grid-column: 1 / -1;
+  padding-top: 4px;
+}
+
+.xr-group-box {
+  display: inline-grid;
+  grid-template-columns: 0px 30px auto;
+}
+
+.xr-group-box-vline {
+  grid-column-start: 1;
+  border-right: 0.2em solid;
+  border-color: var(--xr-border-color);
+  width: 0px;
+}
+
+.xr-group-box-hline {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  height: 1em;
+  width: 26px;
+  border-bottom: 0.2em solid;
+  border-color: var(--xr-border-color);
+}
+
+.xr-group-box-contents {
+  grid-column-start: 3;
+  padding-bottom: 4px;
+}
+
+.xr-group-box-contents > label::before {
+  content: "📂";
+  padding-right: 0.3em;
+}
+
+.xr-group-box-contents > input:checked + label::before {
+  content: "📁";
+}
+
+.xr-group-box-contents > input:checked + label {
+  padding-bottom: 0px;
+}
+
+.xr-group-box-contents > input:checked ~ .xr-sections {
+  display: none;
+}
+
+.xr-group-box-contents > input + label > span {
+  display: none;
+}
+
+.xr-group-box-ellipsis {
+  font-size: 1.4em;
+  font-weight: 900;
+  color: var(--xr-font-color2);
+  letter-spacing: 0.15em;
+  cursor: default;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: "(";
+}
+
+.xr-dim-list:after {
+  content: ")";
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ",";
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  border-color: var(--xr-background-color-row-odd);
+  margin-bottom: 0;
+  padding-top: 2px;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+  border-color: var(--xr-background-color-row-even);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  display: none;
+  border-top: 2px dotted var(--xr-background-color);
+  padding-bottom: 20px !important;
+  padding-top: 10px !important;
+}
+
+.xr-var-attrs-in + label,
+.xr-var-data-in + label,
+.xr-index-data-in + label {
+  padding: 0 1px;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-data > pre,
+.xr-index-data > pre,
+.xr-var-data > table > tbody > tr {
+  background-color: transparent !important;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-index-name div,
+.xr-index-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2,
+.xr-no-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.xr-var-attrs-in:checked + label > .xr-icon-file-text2,
+.xr-var-data-in:checked + label > .xr-icon-database,
+.xr-index-data-in:checked + label > .xr-icon-database {
+  color: var(--xr-font-color0);
+  filter: drop-shadow(1px 1px 5px var(--xr-font-color2));
+  stroke-width: 0.8px;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.UxDataset&gt; Size: 883MB
+Dimensions:                              (depth_half: 73, time: 10958,
+                                          n_face: 12, level_full: 90,
+                                          soil_depth_water_level: 5,
+                                          depth_full: 72, level_half: 91,
+                                          soil_depth_energy_level: 5, crs: 1)
+Coordinates:
+  * depth_half                           (depth_half) float32 292B 0.0 ... 5....
+  * time                                 (time) datetime64[ns] 88kB 2020-01-0...
+  * level_full                           (level_full) int32 360B 1 2 3 ... 89 90
+  * soil_depth_water_level               (soil_depth_water_level) float32 20B ...
+  * depth_full                           (depth_full) float32 288B 1.0 ... 5....
+  * level_half                           (level_half) int32 364B 1 2 3 ... 90 91
+  * soil_depth_energy_level              (soil_depth_energy_level) float32 20B ...
+  * crs                                  (crs) float32 4B nan
+Dimensions without coordinates: n_face
+Data variables: (12/103)
+    A_tracer_v_to                        (time, depth_half, n_face) float32 38MB ...
+    FrshFlux_IceSalt                     (time, n_face) float32 526kB ...
+    FrshFlux_TotalIce                    (time, n_face) float32 526kB ...
+    Qbot                                 (time, n_face) float32 526kB ...
+    Qtop                                 (time, n_face) float32 526kB ...
+    Wind_Speed_10m                       (time, n_face) float32 526kB ...
+    ...                                   ...
+    vas                                  (time, n_face) float32 526kB ...
+    w                                    (time, depth_half, n_face) float32 38MB ...
+    wa_phy                               (time, level_half, n_face) float32 48MB ...
+    zg                                   (level_full, n_face) float32 4kB ...
+    zghalf                               (level_half, n_face) float32 4kB ...
+    zos                                  (time, n_face) float32 526kB ...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>uxarray.UxDataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-b45d48b3-054b-411e-920e-1007a93ca521' class='xr-section-summary-in' type='checkbox' disabled /><label for='section-b45d48b3-054b-411e-920e-1007a93ca521' class='xr-section-summary'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>depth_half</span>: 73</li><li><span class='xr-has-index'>time</span>: 10958</li><li><span>n_face</span>: 12</li><li><span class='xr-has-index'>level_full</span>: 90</li><li><span class='xr-has-index'>soil_depth_water_level</span>: 5</li><li><span class='xr-has-index'>depth_full</span>: 72</li><li><span class='xr-has-index'>level_half</span>: 91</li><li><span class='xr-has-index'>soil_depth_energy_level</span>: 5</li><li><span class='xr-has-index'>crs</span>: 1</li></ul></div></li><li class='xr-section-item'><input id='section-e8fc3216-891e-4e18-989b-4f34db20be9c' class='xr-section-summary-in' type='checkbox' checked /><label for='section-e8fc3216-891e-4e18-989b-4f34db20be9c' class='xr-section-summary' title='Expand/collapse section'>Coordinates: <span>(8)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>depth_half</span></div><div class='xr-var-dims'>(depth_half)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.0 2.0 4.2 ... 5.681e+03 5.951e+03</div><input id='attrs-c5d54d86-ae82-454d-934c-e27393d33c66' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c5d54d86-ae82-454d-934c-e27393d33c66' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8cb83a76-21f5-4ac8-b63a-905b89fec9eb' class='xr-var-data-in' type='checkbox'><label for='data-8cb83a76-21f5-4ac8-b63a-905b89fec9eb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>Z</dd><dt><span>long_name :</span></dt><dd>depth_below_sea</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>standard_name :</span></dt><dd>depth</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([0.0000e+00, 2.0000e+00, 4.2000e+00, 6.7000e+00, 9.5000e+00, 1.2600e+01,
+       1.6100e+01, 2.0000e+01, 2.4400e+01, 2.9300e+01, 3.4700e+01, 4.0600e+01,
+       4.7000e+01, 5.4100e+01, 6.1800e+01, 7.0200e+01, 7.9400e+01, 8.9500e+01,
+       1.0050e+02, 1.1250e+02, 1.2570e+02, 1.4010e+02, 1.5580e+02, 1.7290e+02,
+       1.9160e+02, 2.1200e+02, 2.3430e+02, 2.5860e+02, 2.8510e+02, 3.1400e+02,
+       3.4550e+02, 3.7980e+02, 4.1710e+02, 4.5770e+02, 5.0080e+02, 5.4610e+02,
+       5.9290e+02, 6.4130e+02, 6.9130e+02, 7.4300e+02, 7.9640e+02, 8.5160e+02,
+       9.0860e+02, 9.6750e+02, 1.0283e+03, 1.0912e+03, 1.1578e+03, 1.2304e+03,
+       1.3110e+03, 1.4016e+03, 1.5018e+03, 1.6118e+03, 1.7321e+03, 1.8608e+03,
+       1.9982e+03, 2.1446e+03, 2.3003e+03, 2.4655e+03, 2.6403e+03, 2.8247e+03,
+       3.0188e+03, 3.2224e+03, 3.4353e+03, 3.6572e+03, 3.8877e+03, 4.1262e+03,
+       4.3721e+03, 4.6245e+03, 4.8826e+03, 5.1454e+03, 5.4118e+03, 5.6807e+03,
+       5.9508e+03], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2020-01-02 ... 2050-01-01</div><input id='attrs-c82c91cc-70b5-4b23-9634-9446917f0f0e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c82c91cc-70b5-4b23-9634-9446917f0f0e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6123927c-ef9f-4c6a-89d9-9a9c31bdf39c' class='xr-var-data-in' type='checkbox'><label for='data-6123927c-ef9f-4c6a-89d9-9a9c31bdf39c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2020-01-02T00:00:00.000000000&#x27;, &#x27;2020-01-03T00:00:00.000000000&#x27;,
+       &#x27;2020-01-04T00:00:00.000000000&#x27;, ..., &#x27;2049-12-30T00:00:00.000000000&#x27;,
+       &#x27;2049-12-31T00:00:00.000000000&#x27;, &#x27;2050-01-01T00:00:00.000000000&#x27;],
+      shape=(10958,), dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>level_full</span></div><div class='xr-var-dims'>(level_full)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>1 2 3 4 5 6 7 ... 85 86 87 88 89 90</div><input id='attrs-39bc1c74-7657-4ce6-bc9a-d2baf4b771a7' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-39bc1c74-7657-4ce6-bc9a-d2baf4b771a7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2fae9dbc-31ef-4437-a9fc-e97336b94b73' class='xr-var-data-in' type='checkbox'><label for='data-2fae9dbc-31ef-4437-a9fc-e97336b94b73' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>Z</dd><dt><span>long_name :</span></dt><dd>generalized_height</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>standard_name :</span></dt><dd>height</dd></dl></div><div class='xr-var-data'><pre>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+       19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,
+       37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
+       55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72,
+       73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90],
+      dtype=int32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>soil_depth_water_level</span></div><div class='xr-var-dims'>(soil_depth_water_level)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.0325 0.192 0.7755 2.683 6.984</div><input id='attrs-5dfa0d7f-d58b-4819-b703-8da19a74f5fc' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5dfa0d7f-d58b-4819-b703-8da19a74f5fc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0d481f17-02ca-4c2c-8245-9fd1d6a96193' class='xr-var-data-in' type='checkbox'><label for='data-0d481f17-02ca-4c2c-8245-9fd1d6a96193' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>Z</dd><dt><span>long_name :</span></dt><dd>depth_below_land</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([0.0325, 0.192 , 0.7755, 2.683 , 6.984 ], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>depth_full</span></div><div class='xr-var-dims'>(depth_full)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>1.0 3.1 ... 5.546e+03 5.816e+03</div><input id='attrs-b805702c-95ce-4f8f-a6e2-66c1fed60b6c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b805702c-95ce-4f8f-a6e2-66c1fed60b6c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-be9993ce-c491-432d-8af1-b993f06cbb00' class='xr-var-data-in' type='checkbox'><label for='data-be9993ce-c491-432d-8af1-b993f06cbb00' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>Z</dd><dt><span>long_name :</span></dt><dd>depth_below_sea</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>standard_name :</span></dt><dd>depth</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([1.00000e+00, 3.10000e+00, 5.45000e+00, 8.10000e+00, 1.10500e+01,
+       1.43500e+01, 1.80500e+01, 2.22000e+01, 2.68500e+01, 3.20000e+01,
+       3.76500e+01, 4.38000e+01, 5.05500e+01, 5.79500e+01, 6.60000e+01,
+       7.48000e+01, 8.44500e+01, 9.50000e+01, 1.06500e+02, 1.19100e+02,
+       1.32900e+02, 1.47950e+02, 1.64350e+02, 1.82250e+02, 2.01800e+02,
+       2.23150e+02, 2.46450e+02, 2.71850e+02, 2.99550e+02, 3.29750e+02,
+       3.62650e+02, 3.98450e+02, 4.37400e+02, 4.79250e+02, 5.23450e+02,
+       5.69500e+02, 6.17100e+02, 6.66300e+02, 7.17150e+02, 7.69700e+02,
+       8.24000e+02, 8.80100e+02, 9.38050e+02, 9.97900e+02, 1.05975e+03,
+       1.12450e+03, 1.19410e+03, 1.27070e+03, 1.35630e+03, 1.45170e+03,
+       1.55680e+03, 1.67195e+03, 1.79645e+03, 1.92950e+03, 2.07140e+03,
+       2.22245e+03, 2.38290e+03, 2.55290e+03, 2.73250e+03, 2.92175e+03,
+       3.12060e+03, 3.32885e+03, 3.54625e+03, 3.77245e+03, 4.00695e+03,
+       4.24915e+03, 4.49830e+03, 4.75355e+03, 5.01400e+03, 5.27860e+03,
+       5.54625e+03, 5.81575e+03], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>level_half</span></div><div class='xr-var-dims'>(level_half)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>1 2 3 4 5 6 7 ... 86 87 88 89 90 91</div><input id='attrs-159666ac-f066-4677-a377-a9cefeae7bba' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-159666ac-f066-4677-a377-a9cefeae7bba' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9ddb5f7d-1a3a-4c41-aad7-d91a90c9c257' class='xr-var-data-in' type='checkbox'><label for='data-9ddb5f7d-1a3a-4c41-aad7-d91a90c9c257' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>Z</dd><dt><span>long_name :</span></dt><dd>generalized_height</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>standard_name :</span></dt><dd>height</dd></dl></div><div class='xr-var-data'><pre>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+       19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,
+       37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
+       55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72,
+       73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90,
+       91], dtype=int32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>soil_depth_energy_level</span></div><div class='xr-var-dims'>(soil_depth_energy_level)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.0325 0.192 0.7755 2.683 6.984</div><input id='attrs-9264ca97-5404-4e18-9494-bb8d5ed33397' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9264ca97-5404-4e18-9494-bb8d5ed33397' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a5a53b7f-49c9-4302-ab3e-07adfb40e6cf' class='xr-var-data-in' type='checkbox'><label for='data-a5a53b7f-49c9-4302-ab3e-07adfb40e6cf' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>Z</dd><dt><span>long_name :</span></dt><dd>depth_below_land</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([0.0325, 0.192 , 0.7755, 2.683 , 6.984 ], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>crs</span></div><div class='xr-var-dims'>(crs)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>nan</div><input id='attrs-a91b0f21-a4da-418d-84fa-acc74ab168d4' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a91b0f21-a4da-418d-84fa-acc74ab168d4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-57aeb8fa-2fb9-4225-bc1d-c188a4266fc8' class='xr-var-data-in' type='checkbox'><label for='data-57aeb8fa-2fb9-4225-bc1d-c188a4266fc8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>grid_mapping_name :</span></dt><dd>healpix</dd><dt><span>healpix_nside :</span></dt><dd>1</dd><dt><span>healpix_order :</span></dt><dd>nest</dd></dl></div><div class='xr-var-data'><pre>array([nan], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-5292c93c-51b7-47a3-bcb8-6a5b8c0b9236' class='xr-section-summary-in' type='checkbox' /><label for='section-5292c93c-51b7-47a3-bcb8-6a5b8c0b9236' class='xr-section-summary' title='Expand/collapse section'>Data variables: <span>(103)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>A_tracer_v_to</span></div><div class='xr-var-dims'>(time, depth_half, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-7803b00a-c951-4aa0-9269-060f5555f727' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7803b00a-c951-4aa0-9269-060f5555f727' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8e8830c0-ebd1-4abe-8954-049a7bc88fa2' class='xr-var-data-in' type='checkbox'><label for='data-8e8830c0-ebd1-4abe-8954-049a7bc88fa2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>sea water vertical diffusivity</dd><dt><span>standard_name :</span></dt><dd>ocean_vertical_diffusivity</dd><dt><span>units :</span></dt><dd>m2 s-1</dd><dt><span>vgrid :</span></dt><dd>depth_below_sea_half</dd></dl></div><div class='xr-var-data'><pre>[9599208 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>FrshFlux_IceSalt</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-07b0a9fd-41c9-4008-acf7-ed0e919b79c4' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-07b0a9fd-41c9-4008-acf7-ed0e919b79c4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e0a553bc-4388-4c26-8f65-ebf3fbce3e92' class='xr-var-data-in' type='checkbox'><label for='data-e0a553bc-4388-4c26-8f65-ebf3fbce3e92' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Salt volume flux due to sea ice change</dd><dt><span>units :</span></dt><dd>psu m s-1</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>FrshFlux_TotalIce</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ed6ecf2c-19ed-44b8-a5d6-3d6118d40852' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ed6ecf2c-19ed-44b8-a5d6-3d6118d40852' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bd49307e-0e6e-428a-b5a2-5f67c0ab8dc5' class='xr-var-data-in' type='checkbox'><label for='data-bd49307e-0e6e-428a-b5a2-5f67c0ab8dc5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Freshwater Flux due to Sea Ice Change</dd><dt><span>units :</span></dt><dd>m s-1</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Qbot</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-bf8b1aff-c405-442f-953f-1b428d974931' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-bf8b1aff-c405-442f-953f-1b428d974931' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3b05859f-638e-4e2b-a12c-07b0f528ebc7' class='xr-var-data-in' type='checkbox'><label for='data-3b05859f-638e-4e2b-a12c-07b0f528ebc7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Conductive heat flux at ice-ocean interface</dd><dt><span>units :</span></dt><dd>W/m^2</dd><dt><span>vgrid :</span></dt><dd>generic_ice</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Qtop</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-2ed00716-e20f-4a3e-ae9a-ce92d87a6591' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2ed00716-e20f-4a3e-ae9a-ce92d87a6591' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-af835a5d-ce54-4e20-87be-e1ed53508998' class='xr-var-data-in' type='checkbox'><label for='data-af835a5d-ce54-4e20-87be-e1ed53508998' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Energy flux available for surface melting</dd><dt><span>units :</span></dt><dd>W/m^2</dd><dt><span>vgrid :</span></dt><dd>generic_ice</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Wind_Speed_10m</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-09cd67a9-2802-4afa-95a9-31e90b08fae5' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-09cd67a9-2802-4afa-95a9-31e90b08fae5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-06a353c9-610e-4308-9b7a-5dec2b5bcef7' class='xr-var-data-in' type='checkbox'><label for='data-06a353c9-610e-4308-9b7a-5dec2b5bcef7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Wind Speed at 10m height</dd><dt><span>units :</span></dt><dd>m/s</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>atmos_fluxes_FrshFlux_Evaporation</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-01f1c7a3-cde4-4144-8396-1e26174043a5' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-01f1c7a3-cde4-4144-8396-1e26174043a5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4b9a6cd0-134a-40e0-86c0-81ca343cb274' class='xr-var-data-in' type='checkbox'><label for='data-4b9a6cd0-134a-40e0-86c0-81ca343cb274' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>units :</span></dt><dd>m/s</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>atmos_fluxes_FrshFlux_Precipitation</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-3f6d590e-3539-40b7-9bd0-ad08f386a30a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3f6d590e-3539-40b7-9bd0-ad08f386a30a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d0057433-e43f-49dc-9854-7ca2ac225363' class='xr-var-data-in' type='checkbox'><label for='data-d0057433-e43f-49dc-9854-7ca2ac225363' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>units :</span></dt><dd>m/s</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>atmos_fluxes_FrshFlux_Runoff</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-62eb9c91-070c-4d67-9632-35d6a610b859' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-62eb9c91-070c-4d67-9632-35d6a610b859' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-48fff271-f030-49c0-9762-3df9e1dd5682' class='xr-var-data-in' type='checkbox'><label for='data-48fff271-f030-49c0-9762-3df9e1dd5682' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>units :</span></dt><dd>m/s</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>atmos_fluxes_FrshFlux_SnowFall</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-6eebd3b6-5094-42d4-89b9-c9cccabacf95' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6eebd3b6-5094-42d4-89b9-c9cccabacf95' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6765808d-482a-4faf-a6c6-755ea4146203' class='xr-var-data-in' type='checkbox'><label for='data-6765808d-482a-4faf-a6c6-755ea4146203' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>units :</span></dt><dd>m/s</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>atmos_fluxes_HeatFlux_Latent</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-87049e5d-e1a2-46c8-a219-0e607448ed15' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-87049e5d-e1a2-46c8-a219-0e607448ed15' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a3f9fd55-e4af-4e20-82a1-85a89e95a8b6' class='xr-var-data-in' type='checkbox'><label for='data-a3f9fd55-e4af-4e20-82a1-85a89e95a8b6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>units :</span></dt><dd>W/m2</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>atmos_fluxes_HeatFlux_LongWave</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-61be01e3-296c-431a-b3ca-f272fa24c7bd' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-61be01e3-296c-431a-b3ca-f272fa24c7bd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b2f60417-95a8-4606-a0d5-a6125e1468ca' class='xr-var-data-in' type='checkbox'><label for='data-b2f60417-95a8-4606-a0d5-a6125e1468ca' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>units :</span></dt><dd>W/m2</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>atmos_fluxes_HeatFlux_Sensible</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-28403010-9aff-4375-a721-f1a73fb4fbeb' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-28403010-9aff-4375-a721-f1a73fb4fbeb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6cec8434-1282-45e3-80f8-eee5d3886803' class='xr-var-data-in' type='checkbox'><label for='data-6cec8434-1282-45e3-80f8-eee5d3886803' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>units :</span></dt><dd>W/m2</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>atmos_fluxes_HeatFlux_ShortWave</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-5d60c285-7902-4e6d-8331-77ced6f74b28' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5d60c285-7902-4e6d-8331-77ced6f74b28' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e982782f-0fb5-4ead-b4db-2e3e5129d541' class='xr-var-data-in' type='checkbox'><label for='data-e982782f-0fb5-4ead-b4db-2e3e5129d541' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>units :</span></dt><dd>W/m2</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>atmos_fluxes_HeatFlux_Total</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1a57786f-93b9-4c4d-adfe-154a29f540d9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1a57786f-93b9-4c4d-adfe-154a29f540d9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ae111113-84f2-4fbe-867b-e7250f80a041' class='xr-var-data-in' type='checkbox'><label for='data-ae111113-84f2-4fbe-867b-e7250f80a041' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>units :</span></dt><dd>W/m2</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>atmos_fluxes_stress_x</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-0fda8dc1-1c2a-4372-ad10-48a6b2ce139c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0fda8dc1-1c2a-4372-ad10-48a6b2ce139c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f421d6d8-d31b-42e7-ae14-791b351cbb50' class='xr-var-data-in' type='checkbox'><label for='data-f421d6d8-d31b-42e7-ae14-791b351cbb50' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>units :</span></dt><dd>Pa</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>atmos_fluxes_stress_xw</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1b99fa5a-98e2-4a23-931f-54d223801844' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1b99fa5a-98e2-4a23-931f-54d223801844' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e87fcc44-ed86-477f-a2b0-b319269669f3' class='xr-var-data-in' type='checkbox'><label for='data-e87fcc44-ed86-477f-a2b0-b319269669f3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>units :</span></dt><dd>Pa</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>atmos_fluxes_stress_y</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-6c9d1f43-d3dd-4ef6-ae94-a21b508e278c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6c9d1f43-d3dd-4ef6-ae94-a21b508e278c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0e59436e-383f-44dc-aa98-af272b1221b7' class='xr-var-data-in' type='checkbox'><label for='data-0e59436e-383f-44dc-aa98-af272b1221b7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>units :</span></dt><dd>Pa</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>atmos_fluxes_stress_yw</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1a39e719-83e9-4ece-9618-ab51e1a63992' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1a39e719-83e9-4ece-9618-ab51e1a63992' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d83dc509-321f-41a8-a56d-6e74cd6e8d1e' class='xr-var-data-in' type='checkbox'><label for='data-d83dc509-321f-41a8-a56d-6e74cd6e8d1e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>units :</span></dt><dd>Pa</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>cli</span></div><div class='xr-var-dims'>(time, level_full, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-fca79cec-6c70-4059-aa41-c73cee58e9d6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-fca79cec-6c70-4059-aa41-c73cee58e9d6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a8c16bd1-2fb8-4021-8a76-178d7ec8ca9a' class='xr-var-data-in' type='checkbox'><label for='data-a8c16bd1-2fb8-4021-8a76-178d7ec8ca9a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>specific cloud ice content</dd><dt><span>units :</span></dt><dd>kg kg-1</dd><dt><span>vgrid :</span></dt><dd>reference</dd></dl></div><div class='xr-var-data'><pre>[11834640 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>clivi</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e2022e11-8663-4ab3-bd8d-c08f29f6100e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e2022e11-8663-4ab3-bd8d-c08f29f6100e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1a377940-29a4-45ec-a10a-23b147846834' class='xr-var-data-in' type='checkbox'><label for='data-1a377940-29a4-45ec-a10a-23b147846834' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>vertically integrated cloud ice</dd><dt><span>units :</span></dt><dd>kg m-2</dd><dt><span>vgrid :</span></dt><dd>atmosphere</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>cllvi</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-3e43f717-9b36-410a-bc0d-2c6679b8bb97' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3e43f717-9b36-410a-bc0d-2c6679b8bb97' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d8117a1e-52d3-4d46-a5ec-ce28e2779991' class='xr-var-data-in' type='checkbox'><label for='data-d8117a1e-52d3-4d46-a5ec-ce28e2779991' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>vertically integrated cloud water</dd><dt><span>units :</span></dt><dd>kg m-2</dd><dt><span>vgrid :</span></dt><dd>atmosphere</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>clw</span></div><div class='xr-var-dims'>(time, level_full, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1b687591-6167-42c8-abad-45b3535acc80' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1b687591-6167-42c8-abad-45b3535acc80' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-051d65ee-1520-4537-92ca-d7c581ed81ba' class='xr-var-data-in' type='checkbox'><label for='data-051d65ee-1520-4537-92ca-d7c581ed81ba' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>specific cloud water content</dd><dt><span>units :</span></dt><dd>kg kg-1</dd><dt><span>vgrid :</span></dt><dd>reference</dd></dl></div><div class='xr-var-data'><pre>[11834640 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>conc</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-44a247ad-5dfa-4397-8cee-e1f9b6e62495' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-44a247ad-5dfa-4397-8cee-e1f9b6e62495' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-86239483-eb79-4855-b5d7-1573efa74852' class='xr-var-data-in' type='checkbox'><label for='data-86239483-eb79-4855-b5d7-1573efa74852' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>ice concentration in each ice class</dd><dt><span>vgrid :</span></dt><dd>generic_ice</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>delhi</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-3fd943d0-6897-4619-8bde-a9cf29c816a3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3fd943d0-6897-4619-8bde-a9cf29c816a3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3bba0024-999e-4938-9cf4-91cf1a173fc9' class='xr-var-data-in' type='checkbox'><label for='data-3bba0024-999e-4938-9cf4-91cf1a173fc9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Change in ice mean thickness due to thermodynamic effects</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>vgrid :</span></dt><dd>generic_ice</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>dzghalf</span></div><div class='xr-var-dims'>(level_full, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-54990f57-857a-48a7-b0eb-37efd4056ea3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-54990f57-857a-48a7-b0eb-37efd4056ea3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c94abf6d-d59f-418d-85f9-ca7cd8bdc4aa' class='xr-var-data-in' type='checkbox'><label for='data-c94abf6d-d59f-418d-85f9-ca7cd8bdc4aa' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>vertical extent of model full layer</dd><dt><span>standard_name :</span></dt><dd>cell_thickness</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>[1080 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>heatOceI</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-2a0d87e9-3c17-4262-852d-5907ab3de159' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2a0d87e9-3c17-4262-852d-5907ab3de159' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-49a8907d-9388-4029-8ec7-aea5f5469d67' class='xr-var-data-in' type='checkbox'><label for='data-49a8907d-9388-4029-8ec7-aea5f5469d67' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Heat flux to ocean from the ice growth</dd><dt><span>units :</span></dt><dd>W/m^2</dd><dt><span>vgrid :</span></dt><dd>generic_ice</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>heatOceW</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-407694f9-62dc-432b-9b8a-f57fb7446ec6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-407694f9-62dc-432b-9b8a-f57fb7446ec6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-695d41de-3008-4411-b8a2-142605e3e732' class='xr-var-data-in' type='checkbox'><label for='data-695d41de-3008-4411-b8a2-142605e3e732' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Heat flux to ocean from the atmosphere</dd><dt><span>units :</span></dt><dd>W/m^2</dd><dt><span>vgrid :</span></dt><dd>generic_ice</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>heat_content_seaice</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-98d76a94-c5c4-4e5a-b403-616be5cf0cb8' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-98d76a94-c5c4-4e5a-b403-616be5cf0cb8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f09ee7ba-d351-49ea-ba6d-018167cb1e8d' class='xr-var-data-in' type='checkbox'><label for='data-f09ee7ba-d351-49ea-ba6d-018167cb1e8d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>heat_content_snow</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-4d911c4b-5438-42e0-8253-af6e80c30931' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4d911c4b-5438-42e0-8253-af6e80c30931' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8aa0c8f8-4911-48ec-bc33-8b81df162309' class='xr-var-data-in' type='checkbox'><label for='data-8aa0c8f8-4911-48ec-bc33-8b81df162309' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>heat_content_total</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-5a033ea4-31a2-4a10-8e13-8c3931e7fdfb' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5a033ea4-31a2-4a10-8e13-8c3931e7fdfb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4a4e1994-ebb7-4d47-8d73-0aa7f7250932' class='xr-var-data-in' type='checkbox'><label for='data-4a4e1994-ebb7-4d47-8d73-0aa7f7250932' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>hfls</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d929988c-2c67-4eb0-a141-0d00ecff2ccf' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d929988c-2c67-4eb0-a141-0d00ecff2ccf' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b9be15df-64af-4c70-acdf-ab6678dcfa8a' class='xr-var-data-in' type='checkbox'><label for='data-b9be15df-64af-4c70-acdf-ab6678dcfa8a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>latent heat flux</dd><dt><span>standard_name :</span></dt><dd>surface_downward_latent_heat_flux</dd><dt><span>units :</span></dt><dd>W m-2</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>hfss</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-bfc9f3b1-aafa-4563-92d2-f8bac62dbac6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-bfc9f3b1-aafa-4563-92d2-f8bac62dbac6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-68f7eaf3-dec6-459c-9100-c3484df46e94' class='xr-var-data-in' type='checkbox'><label for='data-68f7eaf3-dec6-459c-9100-c3484df46e94' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>sensible heat flux</dd><dt><span>standard_name :</span></dt><dd>surface_downward_sensible_heat_flux</dd><dt><span>units :</span></dt><dd>W m-2</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>hi</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-6b5d2c57-d580-45e9-bdfd-420d4436105b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6b5d2c57-d580-45e9-bdfd-420d4436105b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b4c234fa-50a1-457d-aa95-b87dfbe8b35a' class='xr-var-data-in' type='checkbox'><label for='data-b4c234fa-50a1-457d-aa95-b87dfbe8b35a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>ice thickness</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>vgrid :</span></dt><dd>generic_ice</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>hs</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-38d6c66a-677a-4629-9c5f-829aa32eb723' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-38d6c66a-677a-4629-9c5f-829aa32eb723' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-027f300c-fa09-4691-897b-da55460179d4' class='xr-var-data-in' type='checkbox'><label for='data-027f300c-fa09-4691-897b-da55460179d4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>snow thickness</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>vgrid :</span></dt><dd>generic_ice</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>hus</span></div><div class='xr-var-dims'>(time, level_full, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-99c6dbe2-1f26-4066-8bde-b282f90b38d6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-99c6dbe2-1f26-4066-8bde-b282f90b38d6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-84300d27-dba8-46b6-8dfc-7a7f5a1a4964' class='xr-var-data-in' type='checkbox'><label for='data-84300d27-dba8-46b6-8dfc-7a7f5a1a4964' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Specific humidity</dd><dt><span>standard_name :</span></dt><dd>specific_humidity</dd><dt><span>vgrid :</span></dt><dd>reference</dd></dl></div><div class='xr-var-data'><pre>[11834640 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>hydro_canopy_cond_limited_box</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-75fb3a39-24c5-411c-9995-f575735d1262' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-75fb3a39-24c5-411c-9995-f575735d1262' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4818dc20-1a79-4a0e-921a-116226640352' class='xr-var-data-in' type='checkbox'><label for='data-4818dc20-1a79-4a0e-921a-116226640352' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>jsbach</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>hydro_discharge_ocean_box</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1e8030b9-4b47-4c1d-a4b9-c607e5d2f21f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1e8030b9-4b47-4c1d-a4b9-c607e5d2f21f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5ecc1408-30b6-4234-9e41-072325de0a13' class='xr-var-data-in' type='checkbox'><label for='data-5ecc1408-30b6-4234-9e41-072325de0a13' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>jsbach</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>units :</span></dt><dd>m3 s-1</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>hydro_drainage_box</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-a0606ae1-8bfa-45e8-a109-71bcf9cfe82d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a0606ae1-8bfa-45e8-a109-71bcf9cfe82d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e8d65a78-b6bc-4c28-a589-bec17b2131c7' class='xr-var-data-in' type='checkbox'><label for='data-e8d65a78-b6bc-4c28-a589-bec17b2131c7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>jsbach</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>units :</span></dt><dd>kg m-2 s-1</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>hydro_ice_soil_sl_box</span></div><div class='xr-var-dims'>(time, soil_depth_water_level, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-a1c03c5f-2c37-4fbd-b2ac-0e247c26b206' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a1c03c5f-2c37-4fbd-b2ac-0e247c26b206' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8c571bca-beca-4c43-ae81-37b9deb9c0ea' class='xr-var-data-in' type='checkbox'><label for='data-8c571bca-beca-4c43-ae81-37b9deb9c0ea' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>jsbach</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Ice content in soil layers</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>vgrid :</span></dt><dd>soil_depth_water</dd></dl></div><div class='xr-var-data'><pre>[657480 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>hydro_runoff_box</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f4edcba1-2af7-4b19-854b-10e00543a589' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f4edcba1-2af7-4b19-854b-10e00543a589' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f774d729-a721-4be8-9a0b-adb5482cfc19' class='xr-var-data-in' type='checkbox'><label for='data-f774d729-a721-4be8-9a0b-adb5482cfc19' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>jsbach</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>surface runoff</dd><dt><span>units :</span></dt><dd>kg m-2 s-1</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>hydro_snow_soil_dens_box</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-003cb2b4-1701-486c-9b88-7a8837ea5d83' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-003cb2b4-1701-486c-9b88-7a8837ea5d83' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-49d564c5-a32b-47c3-9455-1b200f425d1c' class='xr-var-data-in' type='checkbox'><label for='data-49d564c5-a32b-47c3-9455-1b200f425d1c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>jsbach</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Density of snow on soil</dd><dt><span>units :</span></dt><dd>kg m-3</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>hydro_transpiration_box</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ec47cbb5-8326-4a90-8f46-275bc0490661' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ec47cbb5-8326-4a90-8f46-275bc0490661' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-294bb9c3-1ffb-4965-862f-48e0acaf0e5b' class='xr-var-data-in' type='checkbox'><label for='data-294bb9c3-1ffb-4965-862f-48e0acaf0e5b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>jsbach</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Transpiration from surface</dd><dt><span>units :</span></dt><dd>kg m-2 s-1</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>hydro_weq_snow_box</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-90750bbe-49f3-4c7a-a4bb-f3affa039dc4' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-90750bbe-49f3-4c7a-a4bb-f3affa039dc4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6fbc7b89-85d3-4f09-8c8a-f7d0659dc7a9' class='xr-var-data-in' type='checkbox'><label for='data-6fbc7b89-85d3-4f09-8c8a-f7d0659dc7a9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>jsbach</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Water content of snow reservoir on surface</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>hydro_wtr_soil_sl_box</span></div><div class='xr-var-dims'>(time, soil_depth_water_level, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-dd86153a-93e7-4939-90c0-72396aff503f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-dd86153a-93e7-4939-90c0-72396aff503f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b80018f5-e081-44e3-861e-73eb9b71706f' class='xr-var-data-in' type='checkbox'><label for='data-b80018f5-e081-44e3-861e-73eb9b71706f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>jsbach</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Water content in soil layers</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>vgrid :</span></dt><dd>soil_depth_water</dd></dl></div><div class='xr-var-data'><pre>[657480 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>ice_u</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-552129e8-8173-44eb-870a-d0ff812cafd5' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-552129e8-8173-44eb-870a-d0ff812cafd5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ffe253be-f2e7-4c78-a7b7-fb1e85102dcf' class='xr-var-data-in' type='checkbox'><label for='data-ffe253be-f2e7-4c78-a7b7-fb1e85102dcf' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>zonal velocity</dd><dt><span>units :</span></dt><dd>m/s</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>ice_v</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-cfc5bc2f-535a-4e08-8cab-c424ddf0b79b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-cfc5bc2f-535a-4e08-8cab-c424ddf0b79b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-32b49d32-a1fb-436b-8af4-c12054156f0c' class='xr-var-data-in' type='checkbox'><label for='data-32b49d32-a1fb-436b-8af4-c12054156f0c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>meridional velocity</dd><dt><span>units :</span></dt><dd>m/s</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>mlotst</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-029690a7-a251-4c39-a71b-0da166786c94' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-029690a7-a251-4c39-a71b-0da166786c94' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1975c9c3-98a1-48c5-8259-0a2e442c8f7d' class='xr-var-data-in' type='checkbox'><label for='data-1975c9c3-98a1-48c5-8259-0a2e442c8f7d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>standard_name :</span></dt><dd>ocean_mixed_layer_thickness_defined_by_sigma_t</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>newice</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-7ca6df1f-1c5b-4cc9-b62d-ee49920e8970' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7ca6df1f-1c5b-4cc9-b62d-ee49920e8970' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-acd5dfda-d152-4eb4-8bc1-5ee88ef4b159' class='xr-var-data-in' type='checkbox'><label for='data-acd5dfda-d152-4eb4-8bc1-5ee88ef4b159' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>new ice growth in open water</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>ocean_fraction_depth_full</span></div><div class='xr-var-dims'>(depth_full, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-77e5dcc8-9b2e-463e-a720-f55cf2fde6ec' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-77e5dcc8-9b2e-463e-a720-f55cf2fde6ec' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7719947e-fce1-4529-8f1d-95b4b3c646e4' class='xr-var-data-in' type='checkbox'><label for='data-7719947e-fce1-4529-8f1d-95b4b3c646e4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>fraction of cell covered by ocean</dd><dt><span>standard_name :</span></dt><dd>ocean_area_fraction</dd></dl></div><div class='xr-var-data'><pre>[864 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>ocean_fraction_depth_half</span></div><div class='xr-var-dims'>(depth_half, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d33cb133-0fa3-41ce-b5e7-ef0081556089' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d33cb133-0fa3-41ce-b5e7-ef0081556089' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-171ba666-36d3-44fd-92ff-19fa5058890f' class='xr-var-data-in' type='checkbox'><label for='data-171ba666-36d3-44fd-92ff-19fa5058890f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>fraction of cell covered by ocean</dd><dt><span>standard_name :</span></dt><dd>ocean_area_fraction</dd></dl></div><div class='xr-var-data'><pre>[876 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>ocean_fraction_surface</span></div><div class='xr-var-dims'>(n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-863155fe-7c5b-4a02-bdbf-4cf991c92df4' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-863155fe-7c5b-4a02-bdbf-4cf991c92df4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-78cb61e1-b4de-44b3-8406-e61e0306d876' class='xr-var-data-in' type='checkbox'><label for='data-78cb61e1-b4de-44b3-8406-e61e0306d876' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>fraction of cell covered by ocean</dd><dt><span>standard_name :</span></dt><dd>ocean_area_fraction</dd></dl></div><div class='xr-var-data'><pre>[12 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pfull</span></div><div class='xr-var-dims'>(time, level_full, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-3a7e7727-4fbb-45dd-8b0b-77555a267ca1' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3a7e7727-4fbb-45dd-8b0b-77555a267ca1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a4184d93-6cd1-49db-8f9a-66a667c4d98d' class='xr-var-data-in' type='checkbox'><label for='data-a4184d93-6cd1-49db-8f9a-66a667c4d98d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>standard_name :</span></dt><dd>air_pressure</dd><dt><span>units :</span></dt><dd>Pa</dd><dt><span>vgrid :</span></dt><dd>reference</dd></dl></div><div class='xr-var-data'><pre>[11834640 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>phalf</span></div><div class='xr-var-dims'>(time, level_half, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-87122ae1-ea32-417f-a4fa-340b631c45bf' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-87122ae1-ea32-417f-a4fa-340b631c45bf' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5eb9c498-b0f7-4cd2-be02-8ba73ce12db1' class='xr-var-data-in' type='checkbox'><label for='data-5eb9c498-b0f7-4cd2-be02-8ba73ce12db1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>standard_name :</span></dt><dd>air_pressure</dd><dt><span>units :</span></dt><dd>Pa</dd><dt><span>vgrid :</span></dt><dd>reference_half</dd></dl></div><div class='xr-var-data'><pre>[11966136 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pr</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-891e7e07-256c-4915-b66d-dd7aa5711003' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-891e7e07-256c-4915-b66d-dd7aa5711003' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6c989838-1fc6-4fb1-a229-8aa903f8054b' class='xr-var-data-in' type='checkbox'><label for='data-6c989838-1fc6-4fb1-a229-8aa903f8054b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>precipitation flux</dd><dt><span>units :</span></dt><dd>kg m-2 s-1</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pres_msl</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ec5df675-f689-4c4c-92db-7a7120751bee' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ec5df675-f689-4c4c-92db-7a7120751bee' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c6f8b7bc-4a4f-451e-8485-fb376bd28c94' class='xr-var-data-in' type='checkbox'><label for='data-c6f8b7bc-4a4f-451e-8485-fb376bd28c94' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>mean sea level pressure</dd><dt><span>units :</span></dt><dd>Pa</dd><dt><span>vgrid :</span></dt><dd>meansea</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pres_sfc</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-7e6957bb-b9ff-4195-a927-ecf3eb42d32b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7e6957bb-b9ff-4195-a927-ecf3eb42d32b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9d3129bd-5680-4e24-aadb-59d6c1ad217b' class='xr-var-data-in' type='checkbox'><label for='data-9d3129bd-5680-4e24-aadb-59d6c1ad217b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>surface pressure</dd><dt><span>standard_name :</span></dt><dd>surface_air_pressure</dd><dt><span>units :</span></dt><dd>Pa</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>prls</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-0bb715bd-257f-4253-a736-59e14a584dd9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0bb715bd-257f-4253-a736-59e14a584dd9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d2672b44-1a8a-46a6-bbcf-1a7de101808a' class='xr-var-data-in' type='checkbox'><label for='data-d2672b44-1a8a-46a6-bbcf-1a7de101808a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>prw</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-8a2d321c-4002-4a11-8a81-aec95498531d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8a2d321c-4002-4a11-8a81-aec95498531d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3c512779-e2e2-4173-b22b-a07495416585' class='xr-var-data-in' type='checkbox'><label for='data-3c512779-e2e2-4173-b22b-a07495416585' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>vertically integrated water vapour</dd><dt><span>units :</span></dt><dd>kg m-2</dd><dt><span>vgrid :</span></dt><dd>atmosphere</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>qg</span></div><div class='xr-var-dims'>(time, level_full, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-40e33598-093f-4e23-bae2-ecaf2b38cd82' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-40e33598-093f-4e23-bae2-ecaf2b38cd82' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bd83b76b-da2f-4b6f-83a4-6de785a0417b' class='xr-var-data-in' type='checkbox'><label for='data-bd83b76b-da2f-4b6f-83a4-6de785a0417b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>specific graupel content</dd><dt><span>units :</span></dt><dd>kg kg-1</dd><dt><span>vgrid :</span></dt><dd>reference</dd></dl></div><div class='xr-var-data'><pre>[11834640 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>qgvi</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-dc1c6cb9-b013-4840-8909-209ad2197066' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-dc1c6cb9-b013-4840-8909-209ad2197066' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b79456d2-2e57-43ef-93be-8e16501cc8ce' class='xr-var-data-in' type='checkbox'><label for='data-b79456d2-2e57-43ef-93be-8e16501cc8ce' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>vertically integrated graupel</dd><dt><span>units :</span></dt><dd>kg m-2</dd><dt><span>vgrid :</span></dt><dd>atmosphere</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>qr</span></div><div class='xr-var-dims'>(time, level_full, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e8ca0757-70bb-43e9-b09b-805c28f4f64c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e8ca0757-70bb-43e9-b09b-805c28f4f64c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a2ac34ee-173d-4e6c-8dd2-b94c4e3dd5fb' class='xr-var-data-in' type='checkbox'><label for='data-a2ac34ee-173d-4e6c-8dd2-b94c4e3dd5fb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>specific rain content</dd><dt><span>units :</span></dt><dd>kg kg-1</dd><dt><span>vgrid :</span></dt><dd>reference</dd></dl></div><div class='xr-var-data'><pre>[11834640 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>qrvi</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-505af69e-6006-4d6b-a433-64c92628d0df' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-505af69e-6006-4d6b-a433-64c92628d0df' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-39e4a180-6130-4665-a8d8-f7d6ded864b7' class='xr-var-data-in' type='checkbox'><label for='data-39e4a180-6130-4665-a8d8-f7d6ded864b7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>vertically integrated rain</dd><dt><span>units :</span></dt><dd>kg m-2</dd><dt><span>vgrid :</span></dt><dd>atmosphere</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>qs</span></div><div class='xr-var-dims'>(time, level_full, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e902e4d9-41d5-4ccd-abe9-bb9acc910f03' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e902e4d9-41d5-4ccd-abe9-bb9acc910f03' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a48756a3-7828-490a-ab19-6a8e40ced90e' class='xr-var-data-in' type='checkbox'><label for='data-a48756a3-7828-490a-ab19-6a8e40ced90e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>specific snow content</dd><dt><span>units :</span></dt><dd>kg kg-1</dd><dt><span>vgrid :</span></dt><dd>reference</dd></dl></div><div class='xr-var-data'><pre>[11834640 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>qsvi</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-3be376fe-845d-479f-9c2a-3fa6705f6c1d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3be376fe-845d-479f-9c2a-3fa6705f6c1d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2bb1c507-2cca-4d4c-8dfd-d319edd16c20' class='xr-var-data-in' type='checkbox'><label for='data-2bb1c507-2cca-4d4c-8dfd-d319edd16c20' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>vertically integrated snow</dd><dt><span>units :</span></dt><dd>kg m-2</dd><dt><span>vgrid :</span></dt><dd>atmosphere</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>qv2m</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-084a3cb7-192a-402d-8ed2-219f052669f7' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-084a3cb7-192a-402d-8ed2-219f052669f7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-faffaef7-1fbb-49b6-a88d-0ed3199f5cae' class='xr-var-data-in' type='checkbox'><label for='data-faffaef7-1fbb-49b6-a88d-0ed3199f5cae' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>specific humidity in 2m</dd><dt><span>units :</span></dt><dd>kg kg-1</dd><dt><span>vgrid :</span></dt><dd>height_2m</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>rlds</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-5d48fc59-bb90-49aa-9a61-aa57ef9c28f3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5d48fc59-bb90-49aa-9a61-aa57ef9c28f3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c0f6ae8a-8517-4697-8b0d-9fb2b9d9784f' class='xr-var-data-in' type='checkbox'><label for='data-c0f6ae8a-8517-4697-8b0d-9fb2b9d9784f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>surface downwelling longwave radiation</dd><dt><span>standard_name :</span></dt><dd>surface_downwelling_longwave_flux_in_air</dd><dt><span>units :</span></dt><dd>W m-2</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>rlus</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-4905833b-180e-4d9c-99a2-5ce0acc7d193' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4905833b-180e-4d9c-99a2-5ce0acc7d193' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5ec2fb68-3c22-416c-9e8a-7b7610f4ee2e' class='xr-var-data-in' type='checkbox'><label for='data-5ec2fb68-3c22-416c-9e8a-7b7610f4ee2e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>surface upwelling longwave radiation</dd><dt><span>standard_name :</span></dt><dd>surface_upwelling_longwave_flux_in_air</dd><dt><span>units :</span></dt><dd>W m-2</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>rlut</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-2d6b92ed-1436-45a4-941a-2225ea3af09f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2d6b92ed-1436-45a4-941a-2225ea3af09f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1f505b89-17a1-4370-b00a-10b331c13408' class='xr-var-data-in' type='checkbox'><label for='data-1f505b89-17a1-4370-b00a-10b331c13408' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>toa outgoing longwave radiation</dd><dt><span>standard_name :</span></dt><dd>toa_outgoing_longwave_flux</dd><dt><span>units :</span></dt><dd>W m-2</dd><dt><span>vgrid :</span></dt><dd>toa</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>rsds</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-076233d2-aa3c-464a-afeb-f3708f67e0b7' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-076233d2-aa3c-464a-afeb-f3708f67e0b7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-de584cca-9219-4de4-b7ed-352df41d5d16' class='xr-var-data-in' type='checkbox'><label for='data-de584cca-9219-4de4-b7ed-352df41d5d16' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>surface downwelling shortwave radiation</dd><dt><span>standard_name :</span></dt><dd>surface_downwelling_shortwave_flux_in_air</dd><dt><span>units :</span></dt><dd>W m-2</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>rsdt</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-9071a495-2e99-430b-b56c-7e37228732fa' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9071a495-2e99-430b-b56c-7e37228732fa' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6cc45462-886c-402f-89a9-f959cbd3ffb6' class='xr-var-data-in' type='checkbox'><label for='data-6cc45462-886c-402f-89a9-f959cbd3ffb6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>toa incident shortwave radiation</dd><dt><span>standard_name :</span></dt><dd>toa_incoming_shortwave_flux</dd><dt><span>units :</span></dt><dd>W m-2</dd><dt><span>vgrid :</span></dt><dd>toa</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>rsus</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-417af40a-908b-4a08-b959-bd1fb6850d76' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-417af40a-908b-4a08-b959-bd1fb6850d76' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0b46028f-2127-454b-a729-5b1d467f58ee' class='xr-var-data-in' type='checkbox'><label for='data-0b46028f-2127-454b-a729-5b1d467f58ee' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>surface upwelling shortwave radiation</dd><dt><span>standard_name :</span></dt><dd>surface_upwelling_shortwave_flux_in_air</dd><dt><span>units :</span></dt><dd>W m-2</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>rsut</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-c206d2b1-ff98-4cd6-8ecb-634a46714267' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c206d2b1-ff98-4cd6-8ecb-634a46714267' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-dac4b3eb-c2f7-4488-9117-8e7a79241c8b' class='xr-var-data-in' type='checkbox'><label for='data-dac4b3eb-c2f7-4488-9117-8e7a79241c8b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>toa outgoing shortwave radiation</dd><dt><span>standard_name :</span></dt><dd>toa_outgoing_shortwave_flux</dd><dt><span>units :</span></dt><dd>W m-2</dd><dt><span>vgrid :</span></dt><dd>toa</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>seb_forc_hflx_box</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-269f4c1d-e6a4-4cd1-84f2-320a4b58d69f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-269f4c1d-e6a4-4cd1-84f2-320a4b58d69f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-463b8fd0-a98b-417c-9177-07fd9bd18f87' class='xr-var-data-in' type='checkbox'><label for='data-463b8fd0-a98b-417c-9177-07fd9bd18f87' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>jsbach</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>additional heat flux at surface</dd><dt><span>units :</span></dt><dd>W m-2</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>seb_heat_cap_box</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-290018fd-9176-4802-b579-01f3b34750cf' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-290018fd-9176-4802-b579-01f3b34750cf' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-71f01400-afdb-48f4-9bab-9cfc5396b877' class='xr-var-data-in' type='checkbox'><label for='data-71f01400-afdb-48f4-9bab-9cfc5396b877' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>jsbach</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>surface layer heat capacity</dd><dt><span>units :</span></dt><dd>J m-2 K-1</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>sfcwind</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-084e7d14-63fe-4984-a537-8dc9b8903f88' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-084e7d14-63fe-4984-a537-8dc9b8903f88' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f9e66708-e651-4efc-b28a-f45b2be2a495' class='xr-var-data-in' type='checkbox'><label for='data-f9e66708-e651-4efc-b28a-f45b2be2a495' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>10m windspeed</dd><dt><span>units :</span></dt><dd>m s-1</dd><dt><span>vgrid :</span></dt><dd>height_10m</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>sic</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-34a9e394-4567-4266-9eb0-6a329f8b47ab' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-34a9e394-4567-4266-9eb0-6a329f8b47ab' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f6d83b02-8ff5-47b3-be8f-36e7df6eb75f' class='xr-var-data-in' type='checkbox'><label for='data-f6d83b02-8ff5-47b3-be8f-36e7df6eb75f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>fraction of ocean covered by sea ice</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>sit</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-03e9ffc1-efed-4839-9f8a-7d013af03b73' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-03e9ffc1-efed-4839-9f8a-7d013af03b73' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6011f35f-9622-496a-8a8f-df9b3a925630' class='xr-var-data-in' type='checkbox'><label for='data-6011f35f-9622-496a-8a8f-df9b3a925630' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>sea ice thickness</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>snow_to_ice</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-a115147a-5843-41fb-b8d2-09afe6319957' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a115147a-5843-41fb-b8d2-09afe6319957' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e33bbdc7-d951-4bc8-b39b-820b825a876d' class='xr-var-data-in' type='checkbox'><label for='data-e33bbdc7-d951-4bc8-b39b-820b825a876d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>amount of snow that is transformed to ice</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>vgrid :</span></dt><dd>generic_ice</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>so</span></div><div class='xr-var-dims'>(time, depth_full, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-38bd51a3-1883-4d5f-a0d5-d98495100492' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-38bd51a3-1883-4d5f-a0d5-d98495100492' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-148b2124-4896-47bb-be8b-f53024bb0540' class='xr-var-data-in' type='checkbox'><label for='data-148b2124-4896-47bb-be8b-f53024bb0540' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>sea water salinity</dd><dt><span>standard_name :</span></dt><dd>sea_water_salinity</dd><dt><span>units :</span></dt><dd>psu</dd><dt><span>vgrid :</span></dt><dd>depth_below_sea</dd></dl></div><div class='xr-var-data'><pre>[9467712 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>sse_grnd_hflx_old_box</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f1a6829f-c0e6-4f17-83b2-7161e8dbf1b5' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f1a6829f-c0e6-4f17-83b2-7161e8dbf1b5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6b7c0321-6894-4edf-baab-e25541a41a2c' class='xr-var-data-in' type='checkbox'><label for='data-6b7c0321-6894-4edf-baab-e25541a41a2c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>jsbach</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Ground heat flux (old)</dd><dt><span>units :</span></dt><dd>J m-2 s-1</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>sse_t_soil_sl_box</span></div><div class='xr-var-dims'>(time, soil_depth_energy_level, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-008c3186-9608-430c-b7a8-ce1dbe504d4b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-008c3186-9608-430c-b7a8-ce1dbe504d4b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-be82150d-77b3-4663-8229-23e53c0ef0e4' class='xr-var-data-in' type='checkbox'><label for='data-be82150d-77b3-4663-8229-23e53c0ef0e4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>jsbach</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>standard_name :</span></dt><dd>soil_temperature</dd><dt><span>units :</span></dt><dd>K</dd><dt><span>vgrid :</span></dt><dd>soil_depth_energy</dd></dl></div><div class='xr-var-data'><pre>[657480 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>stretch_c</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-7585dad0-4447-4a0a-a3cc-dc5ff6f39178' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7585dad0-4447-4a0a-a3cc-dc5ff6f39178' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c9269515-8cb6-44e2-b298-0faa3bfc4f10' class='xr-var-data-in' type='checkbox'><label for='data-c9269515-8cb6-44e2-b298-0faa3bfc4f10' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>zstar surface stretch at cell center</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>ta</span></div><div class='xr-var-dims'>(time, level_full, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-6eacbdcb-3d23-4697-a0ea-30bea3c0ddbb' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6eacbdcb-3d23-4697-a0ea-30bea3c0ddbb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-eaf6c77e-bb1a-401d-8eae-57ec77fbfe19' class='xr-var-data-in' type='checkbox'><label for='data-eaf6c77e-bb1a-401d-8eae-57ec77fbfe19' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Temperature</dd><dt><span>standard_name :</span></dt><dd>air_temperature</dd><dt><span>units :</span></dt><dd>K</dd><dt><span>vgrid :</span></dt><dd>reference</dd></dl></div><div class='xr-var-data'><pre>[11834640 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>tas</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-571a7794-096a-460e-8afd-5b03575915cb' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-571a7794-096a-460e-8afd-5b03575915cb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b91d67e5-57d3-4346-941d-2185240c1c9c' class='xr-var-data-in' type='checkbox'><label for='data-b91d67e5-57d3-4346-941d-2185240c1c9c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>temperature in 2m</dd><dt><span>standard_name :</span></dt><dd>air_temperature</dd><dt><span>units :</span></dt><dd>K</dd><dt><span>vgrid :</span></dt><dd>height_2m</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>tauu</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-a9a563f1-cd8d-458d-bd37-030a1f2a161f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a9a563f1-cd8d-458d-bd37-030a1f2a161f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d82bfd65-11df-49f0-ad68-1a15c734be2e' class='xr-var-data-in' type='checkbox'><label for='data-d82bfd65-11df-49f0-ad68-1a15c734be2e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>u-momentum flux at the surface</dd><dt><span>units :</span></dt><dd>N m-2</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>tauv</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-47d3de7a-1cbd-4ffd-ba85-491fa2d76d37' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-47d3de7a-1cbd-4ffd-ba85-491fa2d76d37' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4fdbbbff-7511-45f9-8d41-a8595730d591' class='xr-var-data-in' type='checkbox'><label for='data-4fdbbbff-7511-45f9-8d41-a8595730d591' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>v-momentum flux at the surface</dd><dt><span>units :</span></dt><dd>N m-2</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>tke</span></div><div class='xr-var-dims'>(time, depth_half, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d5e77053-3486-45a5-8793-99555120ef5a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d5e77053-3486-45a5-8793-99555120ef5a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-59b1da0d-0a28-410f-9a20-84111cf8b44e' class='xr-var-data-in' type='checkbox'><label for='data-59b1da0d-0a28-410f-9a20-84111cf8b44e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>turbulent kinetic energy</dd><dt><span>units :</span></dt><dd>m2 s-2</dd><dt><span>vgrid :</span></dt><dd>depth_below_sea_half</dd></dl></div><div class='xr-var-data'><pre>[9599208 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>to</span></div><div class='xr-var-dims'>(time, depth_full, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-a10066af-fc14-4186-adb3-a6aa80206a19' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a10066af-fc14-4186-adb3-a6aa80206a19' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c2fbd71d-d5c0-4730-a3ee-477076379214' class='xr-var-data-in' type='checkbox'><label for='data-c2fbd71d-d5c0-4730-a3ee-477076379214' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>sea water potential temperature</dd><dt><span>standard_name :</span></dt><dd>sea_water_potential_temperature</dd><dt><span>units :</span></dt><dd>degC</dd><dt><span>vgrid :</span></dt><dd>depth_below_sea</dd></dl></div><div class='xr-var-data'><pre>[9467712 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>ts</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f8b4abed-13b7-4988-b260-e1e2a379a32b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f8b4abed-13b7-4988-b260-e1e2a379a32b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8ab994fc-8aa8-4520-b1b8-7fee5bf6a70e' class='xr-var-data-in' type='checkbox'><label for='data-8ab994fc-8aa8-4520-b1b8-7fee5bf6a70e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>surface temperature</dd><dt><span>standard_name :</span></dt><dd>surface_temperature</dd><dt><span>units :</span></dt><dd>K</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>u</span></div><div class='xr-var-dims'>(time, depth_full, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-833f38b0-9c89-4a5e-a4d9-ecbaf48a6118' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-833f38b0-9c89-4a5e-a4d9-ecbaf48a6118' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3c0d5b16-41e8-4c04-b492-773714e6c91f' class='xr-var-data-in' type='checkbox'><label for='data-3c0d5b16-41e8-4c04-b492-773714e6c91f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>u zonal velocity component</dd><dt><span>units :</span></dt><dd>m/s</dd><dt><span>vgrid :</span></dt><dd>depth_below_sea</dd></dl></div><div class='xr-var-data'><pre>[9467712 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>u_vint</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e3c0a3ff-7a42-46ca-af12-62ff7fc049a0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e3c0a3ff-7a42-46ca-af12-62ff7fc049a0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-54550cfb-3ecf-4fc3-b2e5-e69def18e089' class='xr-var-data-in' type='checkbox'><label for='data-54550cfb-3ecf-4fc3-b2e5-e69def18e089' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>vertically integrated barotropic zonal velocity</dd><dt><span>units :</span></dt><dd>m2 s-1</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>ua</span></div><div class='xr-var-dims'>(time, level_full, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d4c670c6-4e69-4889-984a-999072fde067' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d4c670c6-4e69-4889-984a-999072fde067' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-141b1f4e-b580-4ee8-8e67-d7adafbfe27e' class='xr-var-data-in' type='checkbox'><label for='data-141b1f4e-b580-4ee8-8e67-d7adafbfe27e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Zonal wind</dd><dt><span>standard_name :</span></dt><dd>eastward_wind</dd><dt><span>units :</span></dt><dd>m s-1</dd><dt><span>vgrid :</span></dt><dd>reference</dd></dl></div><div class='xr-var-data'><pre>[11834640 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>uas</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-beceec8d-11a4-4f5d-88a5-72ca7c739f27' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-beceec8d-11a4-4f5d-88a5-72ca7c739f27' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a98d58da-19c7-4d2b-965f-8332e0a33995' class='xr-var-data-in' type='checkbox'><label for='data-a98d58da-19c7-4d2b-965f-8332e0a33995' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>zonal wind in 10m</dd><dt><span>units :</span></dt><dd>m s-1</dd><dt><span>vgrid :</span></dt><dd>height_10m</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>v</span></div><div class='xr-var-dims'>(time, depth_full, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-725f215d-e243-4cba-ad08-a82946a280e2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-725f215d-e243-4cba-ad08-a82946a280e2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b85b0d75-2404-46f8-bb70-4f63e0f19338' class='xr-var-data-in' type='checkbox'><label for='data-b85b0d75-2404-46f8-bb70-4f63e0f19338' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>v meridional velocity component</dd><dt><span>units :</span></dt><dd>m/s</dd><dt><span>vgrid :</span></dt><dd>depth_below_sea</dd></dl></div><div class='xr-var-data'><pre>[9467712 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>v_vint</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-6bb2890e-0296-49c9-a9db-914424e2cd78' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6bb2890e-0296-49c9-a9db-914424e2cd78' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ece541a5-b964-454e-80f4-e2cab1f28d87' class='xr-var-data-in' type='checkbox'><label for='data-ece541a5-b964-454e-80f4-e2cab1f28d87' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>vertically integrated meridional zonal velocity</dd><dt><span>units :</span></dt><dd>m2 s-1</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>va</span></div><div class='xr-var-dims'>(time, level_full, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-cf7d447b-cc8f-44ea-8486-21652b86bd68' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-cf7d447b-cc8f-44ea-8486-21652b86bd68' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4aab4b34-baea-4bfd-8dfd-f7e81b3c3410' class='xr-var-data-in' type='checkbox'><label for='data-4aab4b34-baea-4bfd-8dfd-f7e81b3c3410' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>Meridional wind</dd><dt><span>standard_name :</span></dt><dd>northward_wind</dd><dt><span>units :</span></dt><dd>m s-1</dd><dt><span>vgrid :</span></dt><dd>reference</dd></dl></div><div class='xr-var-data'><pre>[11834640 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>vas</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-27b1d7af-3da8-4db1-9788-6c8489af5d3e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-27b1d7af-3da8-4db1-9788-6c8489af5d3e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-434de542-9569-4be0-98e2-3132593c2055' class='xr-var-data-in' type='checkbox'><label for='data-434de542-9569-4be0-98e2-3132593c2055' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>meridional wind in 10m</dd><dt><span>units :</span></dt><dd>m s-1</dd><dt><span>vgrid :</span></dt><dd>height_10m</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>w</span></div><div class='xr-var-dims'>(time, depth_half, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-6c9b62e5-087e-4a28-a0f1-20d9881f19c1' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6c9b62e5-087e-4a28-a0f1-20d9881f19c1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-42a92c17-2050-443b-a3ff-6507eebf9c3b' class='xr-var-data-in' type='checkbox'><label for='data-42a92c17-2050-443b-a3ff-6507eebf9c3b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>vertical velocity at cells</dd><dt><span>units :</span></dt><dd>m/s</dd><dt><span>vgrid :</span></dt><dd>depth_below_sea_half</dd></dl></div><div class='xr-var-data'><pre>[9599208 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>wa_phy</span></div><div class='xr-var-dims'>(time, level_half, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-499c4369-ba80-4e01-9781-73c2868a12f2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-499c4369-ba80-4e01-9781-73c2868a12f2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4aba044b-9817-4cfc-af5f-fd0e69587309' class='xr-var-data-in' type='checkbox'><label for='data-4aba044b-9817-4cfc-af5f-fd0e69587309' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>atmo</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>vertical velocity</dd><dt><span>units :</span></dt><dd>m s-1</dd><dt><span>vgrid :</span></dt><dd>reference_half</dd></dl></div><div class='xr-var-data'><pre>[11966136 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>zg</span></div><div class='xr-var-dims'>(level_full, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f6d858eb-c87d-46ef-ae28-1ecb40554818' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f6d858eb-c87d-46ef-ae28-1ecb40554818' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-878a3093-85f1-42b1-bf83-b9ec2a34dc4c' class='xr-var-data-in' type='checkbox'><label for='data-878a3093-85f1-42b1-bf83-b9ec2a34dc4c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>geometric height at full level center</dd><dt><span>standard_name :</span></dt><dd>height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>[1080 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>zghalf</span></div><div class='xr-var-dims'>(level_half, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-06f3c385-da0f-46ca-a8bf-eb7c98e647b6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-06f3c385-da0f-46ca-a8bf-eb7c98e647b6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f9992b6d-6273-4151-8d9f-f05ca01e5fa5' class='xr-var-data-in' type='checkbox'><label for='data-f9992b6d-6273-4151-8d9f-f05ca01e5fa5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>geometric height at half level center</dd><dt><span>standard_name :</span></dt><dd>height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>[1092 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>zos</span></div><div class='xr-var-dims'>(time, n_face)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ea48e755-99e4-4ef4-9b01-1ca11fb96993' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ea48e755-99e4-4ef4-9b01-1ca11fb96993' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-313c296c-b284-4d94-bd1d-cf02cd4611c7' class='xr-var-data-in' type='checkbox'><label for='data-313c296c-b284-4d94-bd1d-cf02cd4611c7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cell_methods :</span></dt><dd>time: mean cell: mean</dd><dt><span>component :</span></dt><dd>ocean</dd><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>zstar sfc elevation at cell center</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>vgrid :</span></dt><dd>surface</dd></dl></div><div class='xr-var-data'><pre>[131496 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-9070c1c4-7ec1-4c2e-bc97-56a544ee2ea0' class='xr-section-summary-in' type='checkbox' /><label for='section-9070c1c4-7ec1-4c2e-bc97-56a544ee2ea0' class='xr-section-summary' title='Expand/collapse section'>Indexes: <span>(8)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>depth_half</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-93f0c5c1-6e16-4267-9e58-c06966ca2c49' class='xr-index-data-in' type='checkbox'/><label for='index-93f0c5c1-6e16-4267-9e58-c06966ca2c49' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([               0.0,                2.0,  4.199999809265137,
+        6.699999809265137,                9.5, 12.600000381469727,
+       16.100000381469727,               20.0, 24.399999618530273,
+       29.299999237060547,  34.70000076293945, 40.599998474121094,
+                     47.0, 54.099998474121094,  61.79999923706055,
+        70.19999694824219,   79.4000015258789,               89.5,
+                    100.5,              112.5, 125.69999694824219,
+       140.10000610351562,  155.8000030517578, 172.89999389648438,
+       191.60000610351562,              212.0,  234.3000030517578,
+        258.6000061035156,  285.1000061035156,              314.0,
+                    345.5, 379.79998779296875,  417.1000061035156,
+       457.70001220703125, 500.79998779296875,  546.0999755859375,
+        592.9000244140625,  641.2999877929688,  691.2999877929688,
+                    743.0,  796.4000244140625,  851.5999755859375,
+        908.5999755859375,              967.5,  1028.300048828125,
+        1091.199951171875,  1157.800048828125, 1230.4000244140625,
+                   1311.0, 1401.5999755859375,  1501.800048828125,
+        1611.800048828125, 1732.0999755859375,  1860.800048828125,
+        1998.199951171875,   2144.60009765625,  2300.300048828125,
+                   2465.5,  2640.300048828125,  2824.699951171875,
+        3018.800048828125,   3222.39990234375,  3435.300048828125,
+        3657.199951171875,  3887.699951171875,    4126.2001953125,
+         4372.10009765625,             4624.5,   4882.60009765625,
+         5145.39990234375,    5411.7998046875,    5680.7001953125,
+          5950.7998046875],
+      dtype=&#x27;float32&#x27;, name=&#x27;depth_half&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-33a9d0a3-c88b-4dbb-aa5e-b597b2abfd29' class='xr-index-data-in' type='checkbox'/><label for='index-33a9d0a3-c88b-4dbb-aa5e-b597b2abfd29' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2020-01-02&#x27;, &#x27;2020-01-03&#x27;, &#x27;2020-01-04&#x27;, &#x27;2020-01-05&#x27;,
+               &#x27;2020-01-06&#x27;, &#x27;2020-01-07&#x27;, &#x27;2020-01-08&#x27;, &#x27;2020-01-09&#x27;,
+               &#x27;2020-01-10&#x27;, &#x27;2020-01-11&#x27;,
+               ...
+               &#x27;2049-12-23&#x27;, &#x27;2049-12-24&#x27;, &#x27;2049-12-25&#x27;, &#x27;2049-12-26&#x27;,
+               &#x27;2049-12-27&#x27;, &#x27;2049-12-28&#x27;, &#x27;2049-12-29&#x27;, &#x27;2049-12-30&#x27;,
+               &#x27;2049-12-31&#x27;, &#x27;2050-01-01&#x27;],
+              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, length=10958, freq=None))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>level_full</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-c03dec5b-8f1e-4f1b-9b94-4cc0179212c7' class='xr-index-data-in' type='checkbox'/><label for='index-c03dec5b-8f1e-4f1b-9b94-4cc0179212c7' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+       19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,
+       37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
+       55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72,
+       73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90],
+      dtype=&#x27;int32&#x27;, name=&#x27;level_full&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>soil_depth_water_level</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-61e1e2ae-2aa6-4797-82ad-34bb48bf7683' class='xr-index-data-in' type='checkbox'/><label for='index-61e1e2ae-2aa6-4797-82ad-34bb48bf7683' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([0.032499998807907104,  0.19200000166893005,   0.7754999995231628,
+          2.683000087738037,    6.984000205993652],
+      dtype=&#x27;float32&#x27;, name=&#x27;soil_depth_water_level&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>depth_full</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-a94292df-5f17-4b77-bb85-e2e0f2d09ef5' class='xr-index-data-in' type='checkbox'/><label for='index-a94292df-5f17-4b77-bb85-e2e0f2d09ef5' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([               1.0, 3.0999999046325684,  5.449999809265137,
+        8.100000381469727, 11.050000190734863, 14.350000381469727,
+       18.049999237060547, 22.200000762939453, 26.850000381469727,
+                     32.0, 37.650001525878906,  43.79999923706055,
+        50.54999923706055,  57.95000076293945,               66.0,
+        74.80000305175781,  84.44999694824219,               95.0,
+                    106.5,  119.0999984741211, 132.89999389648438,
+        147.9499969482422, 164.35000610351562,             182.25,
+        201.8000030517578, 223.14999389648438,  246.4499969482422,
+        271.8500061035156, 299.54998779296875,             329.75,
+        362.6499938964844, 398.45001220703125,  437.3999938964844,
+                   479.25,  523.4500122070312,              569.5,
+        617.0999755859375,  666.2999877929688,  717.1500244140625,
+        769.7000122070312,              824.0,  880.0999755859375,
+        938.0499877929688,  997.9000244140625,            1059.75,
+                   1124.5, 1194.0999755859375,  1270.699951171875,
+        1356.300048828125,  1451.699951171875,  1556.800048828125,
+        1671.949951171875,  1796.449951171875,             1929.5,
+         2071.39990234375,  2222.449951171875,   2382.89990234375,
+         2552.89990234375,             2732.5,            2921.75,
+         3120.60009765625,   3328.85009765625,            3546.25,
+        3772.449951171875,  4006.949951171875,   4249.14990234375,
+          4498.2998046875,    4753.5498046875,             5014.0,
+         5278.60009765625,            5546.25,            5815.75],
+      dtype=&#x27;float32&#x27;, name=&#x27;depth_full&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>level_half</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-0975fd44-3967-49f8-a176-9b2d477bce56' class='xr-index-data-in' type='checkbox'/><label for='index-0975fd44-3967-49f8-a176-9b2d477bce56' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+       19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,
+       37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
+       55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72,
+       73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90,
+       91],
+      dtype=&#x27;int32&#x27;, name=&#x27;level_half&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>soil_depth_energy_level</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-4a619136-05a8-4fa3-96d9-198095cceed4' class='xr-index-data-in' type='checkbox'/><label for='index-4a619136-05a8-4fa3-96d9-198095cceed4' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([0.032499998807907104,  0.19200000166893005,   0.7754999995231628,
+          2.683000087738037,    6.984000205993652],
+      dtype=&#x27;float32&#x27;, name=&#x27;soil_depth_energy_level&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>crs</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-827adc97-8b91-443a-a853-224e8fac5853' class='xr-index-data-in' type='checkbox'/><label for='index-827adc97-8b91-443a-a853-224e8fac5853' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([nan], dtype=&#x27;float32&#x27;, name=&#x27;crs&#x27;))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-3bb73783-d987-40c2-8d04-48a83819f5a0' class='xr-section-summary-in' type='checkbox' disabled /><label for='section-3bb73783-d987-40c2-8d04-48a83819f5a0' class='xr-section-summary'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div><details><summary>Show Grid Information</summary><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in notebooks */
+
+:root {
+  --xr-font-color0: var(
+    --jp-content-font-color0,
+    var(--pst-color-text-base rgba(0, 0, 0, 1))
+  );
+  --xr-font-color2: var(
+    --jp-content-font-color2,
+    var(--pst-color-text-base, rgba(0, 0, 0, 0.54))
+  );
+  --xr-font-color3: var(
+    --jp-content-font-color3,
+    var(--pst-color-text-base, rgba(0, 0, 0, 0.38))
+  );
+  --xr-border-color: var(
+    --jp-border-color2,
+    hsl(from var(--pst-color-on-background, white) h s calc(l - 10))
+  );
+  --xr-disabled-color: var(
+    --jp-layout-color3,
+    hsl(from var(--pst-color-on-background, white) h s calc(l - 40))
+  );
+  --xr-background-color: var(
+    --jp-layout-color0,
+    var(--pst-color-on-background, white)
+  );
+  --xr-background-color-row-even: var(
+    --jp-layout-color1,
+    hsl(from var(--pst-color-on-background, white) h s calc(l - 5))
+  );
+  --xr-background-color-row-odd: var(
+    --jp-layout-color2,
+    hsl(from var(--pst-color-on-background, white) h s calc(l - 15))
+  );
+}
+
+html[theme="dark"],
+html[data-theme="dark"],
+body[data-theme="dark"],
+body.vscode-dark {
+  --xr-font-color0: var(
+    --jp-content-font-color0,
+    var(--pst-color-text-base, rgba(255, 255, 255, 1))
+  );
+  --xr-font-color2: var(
+    --jp-content-font-color2,
+    var(--pst-color-text-base, rgba(255, 255, 255, 0.54))
+  );
+  --xr-font-color3: var(
+    --jp-content-font-color3,
+    var(--pst-color-text-base, rgba(255, 255, 255, 0.38))
+  );
+  --xr-border-color: var(
+    --jp-border-color2,
+    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 10))
+  );
+  --xr-disabled-color: var(
+    --jp-layout-color3,
+    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 40))
+  );
+  --xr-background-color: var(
+    --jp-layout-color0,
+    var(--pst-color-on-background, #111111)
+  );
+  --xr-background-color-row-even: var(
+    --jp-layout-color1,
+    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 5))
+  );
+  --xr-background-color-row-odd: var(
+    --jp-layout-color2,
+    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 15))
+  );
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+  line-height: 1.6;
+  padding-bottom: 4px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.xr-header {
+  border-bottom: solid 1px var(--xr-border-color);
+  margin-bottom: 4px;
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-obj-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type,
+.xr-group-box-contents > label {
+  color: var(--xr-font-color2);
+  display: block;
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 0 20px 0 20px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item > input,
+.xr-group-box-contents > input,
+.xr-array-wrap > input {
+  display: block;
+  opacity: 0;
+  height: 0;
+  margin: 0;
+}
+
+.xr-section-item > input + label,
+.xr-var-item > input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item > input:enabled + label,
+.xr-var-item > input:enabled + label,
+.xr-array-wrap > input:enabled + label,
+.xr-group-box-contents > input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item > input:focus-visible + label,
+.xr-var-item > input:focus-visible + label,
+.xr-array-wrap > input:focus-visible + label,
+.xr-group-box-contents > input:focus-visible + label {
+  outline: auto;
+}
+
+.xr-section-item > input:enabled + label:hover,
+.xr-var-item > input:enabled + label:hover,
+.xr-array-wrap > input:enabled + label:hover,
+.xr-group-box-contents > input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.xr-section-summary > em {
+  font-weight: normal;
+}
+
+.xr-span-grid {
+  grid-column-end: -1;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.3em;
+}
+
+.xr-group-box-contents > input:checked + label > span {
+  display: inline-block;
+  padding-left: 0.6em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: "►";
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: "▼";
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details,
+.xr-group-box-contents > label {
+  padding-top: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  grid-column: 1 / -1;
+  margin-top: 4px;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in ~ .xr-section-details {
+  display: none;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-children {
+  display: inline-grid;
+  grid-template-columns: 100%;
+  grid-column: 1 / -1;
+  padding-top: 4px;
+}
+
+.xr-group-box {
+  display: inline-grid;
+  grid-template-columns: 0px 30px auto;
+}
+
+.xr-group-box-vline {
+  grid-column-start: 1;
+  border-right: 0.2em solid;
+  border-color: var(--xr-border-color);
+  width: 0px;
+}
+
+.xr-group-box-hline {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  height: 1em;
+  width: 26px;
+  border-bottom: 0.2em solid;
+  border-color: var(--xr-border-color);
+}
+
+.xr-group-box-contents {
+  grid-column-start: 3;
+  padding-bottom: 4px;
+}
+
+.xr-group-box-contents > label::before {
+  content: "📂";
+  padding-right: 0.3em;
+}
+
+.xr-group-box-contents > input:checked + label::before {
+  content: "📁";
+}
+
+.xr-group-box-contents > input:checked + label {
+  padding-bottom: 0px;
+}
+
+.xr-group-box-contents > input:checked ~ .xr-sections {
+  display: none;
+}
+
+.xr-group-box-contents > input + label > span {
+  display: none;
+}
+
+.xr-group-box-ellipsis {
+  font-size: 1.4em;
+  font-weight: 900;
+  color: var(--xr-font-color2);
+  letter-spacing: 0.15em;
+  cursor: default;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: "(";
+}
+
+.xr-dim-list:after {
+  content: ")";
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ",";
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  border-color: var(--xr-background-color-row-odd);
+  margin-bottom: 0;
+  padding-top: 2px;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+  border-color: var(--xr-background-color-row-even);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  display: none;
+  border-top: 2px dotted var(--xr-background-color);
+  padding-bottom: 20px !important;
+  padding-top: 10px !important;
+}
+
+.xr-var-attrs-in + label,
+.xr-var-data-in + label,
+.xr-index-data-in + label {
+  padding: 0 1px;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-data > pre,
+.xr-index-data > pre,
+.xr-var-data > table > tbody > tr {
+  background-color: transparent !important;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-index-name div,
+.xr-index-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2,
+.xr-no-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.xr-var-attrs-in:checked + label > .xr-icon-file-text2,
+.xr-var-data-in:checked + label > .xr-icon-database,
+.xr-index-data-in:checked + label > .xr-icon-database {
+  color: var(--xr-font-color0);
+  filter: drop-shadow(1px 1px 5px var(--xr-font-color2));
+  stroke-width: 0.8px;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;uxarray.Grid&gt;
+Original Grid Type: HEALPix
+Grid Dimensions:
+  * n_face: 12
+Grid Coordinates (Spherical):
+  * face_lon: (12,)
+  * face_lat: (12,)
+Grid Coordinates (Cartesian):
+Grid Connectivity Variables:
+Grid Descriptor Variables:
+</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>uxarray.UxDataset.uxgrid</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-384d477a-cef9-4964-95ca-64cd379df6ce' class='xr-section-summary-in' type='checkbox' disabled /><label for='section-384d477a-cef9-4964-95ca-64cd379df6ce' class='xr-section-summary'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>n_face</span>: 12</li></ul></div></li><li class='xr-section-item'><input id='section-8f23feb5-8544-42b2-a4cd-4f74111986ff' class='xr-section-summary-in' type='checkbox' /><label for='section-8f23feb5-8544-42b2-a4cd-4f74111986ff' class='xr-section-summary' title='Expand/collapse section'>Spherical Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>face_lon</span></div><div class='xr-var-dims'>(n_face)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>45.0 135.0 -135.0 ... -135.0 -45.0</div><input id='attrs-0ef3ffb1-1944-4ceb-adee-fa6cff01f9b8' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0ef3ffb1-1944-4ceb-adee-fa6cff01f9b8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2b3332d9-e078-47df-bbd5-3ef3340287fc' class='xr-var-data-in' type='checkbox'><label for='data-2b3332d9-e078-47df-bbd5-3ef3340287fc' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long name :</span></dt><dd>Longitude of the center of each face</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><pre>array([  45.,  135., -135.,  -45.,    0.,   90., -180.,  -90.,   45.,
+        135., -135.,  -45.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>face_lat</span></div><div class='xr-var-dims'>(n_face)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>41.81 41.81 41.81 ... -41.81 -41.81</div><input id='attrs-128b1ce1-621f-4dbe-9942-d7466cf260df' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-128b1ce1-621f-4dbe-9942-d7466cf260df' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-abd35e15-7576-43c5-bc54-d837a5082177' class='xr-var-data-in' type='checkbox'><label for='data-abd35e15-7576-43c5-bc54-d837a5082177' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long name :</span></dt><dd>Latitude of the center of each face</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><pre>array([ 41.8103149,  41.8103149,  41.8103149,  41.8103149,   0.       ,
+         0.       ,   0.       ,   0.       , -41.8103149, -41.8103149,
+       -41.8103149, -41.8103149])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-30e79c57-090b-4e5b-b806-3fe5bba3328f' class='xr-section-summary-in' type='checkbox' disabled /><label for='section-30e79c57-090b-4e5b-b806-3fe5bba3328f' class='xr-section-summary'>Cartesian Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-978a15ae-4187-4e8d-aa90-5cccf2497bff' class='xr-section-summary-in' type='checkbox' disabled /><label for='section-978a15ae-4187-4e8d-aa90-5cccf2497bff' class='xr-section-summary'>Connectivity: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-bb63cf04-609b-42c1-85f6-7f270a5f3228' class='xr-section-summary-in' type='checkbox' disabled /><label for='section-bb63cf04-609b-42c1-85f6-7f270a5f3228' class='xr-section-summary'>Descriptors: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-9d9fc16a-b45a-401f-a439-7df560e76b09' class='xr-section-summary-in' type='checkbox' /><label for='section-9d9fc16a-b45a-401f-a439-7df560e76b09' class='xr-section-summary' title='Expand/collapse section'>Attributes: <span>(5)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>zoom :</span></dt><dd>0</dd><dt><span>n_side :</span></dt><dd>1</dd><dt><span>n_pix :</span></dt><dd>12</dd><dt><span>nest :</span></dt><dd>True</dd><dt><span>source_grid_spec :</span></dt><dd>HEALPix</dd></dl></div></li></ul></div></div></details></div></div>
