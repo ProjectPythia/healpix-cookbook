@@ -1,1 +1,0 @@
-import{a}from"/healpix-cookbook/build/_shared/chunk-5G7PTEEM.js";import"/healpix-cookbook/build/_shared/chunk-DOYQ5WN6.js";import"/healpix-cookbook/build/_shared/chunk-RAQ24GF6.js";export default a();
